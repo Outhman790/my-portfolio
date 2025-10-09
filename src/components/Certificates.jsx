@@ -95,12 +95,12 @@ export default function Certificates() {
   return (
     <section id="certificates" className="section-padding relative overflow-hidden">
       {/* Glassmorphism background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5 backdrop-blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5 backdrop-blur-2xl" />
 
-      {/* Floating glass orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse [animation-delay:1s]" />
-      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-2xl animate-pulse [animation-delay:2s]" />
+      {/* Floating glass orbs - Optimized */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-2xl animate-pulse" style={{ transform: 'translateZ(0)' }} />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/15 rounded-full blur-2xl animate-pulse [animation-delay:1s]" style={{ transform: 'translateZ(0)' }} />
+      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/10 rounded-full blur-xl animate-pulse [animation-delay:2s]" style={{ transform: 'translateZ(0)' }} />
 
       <div className="container-width relative z-10">
         {/* Section Header */}
@@ -145,11 +145,12 @@ export default function Certificates() {
               {/* Card */}
               <div className="relative w-full h-full">
                 <div
-                  className={`relative bg-background/80 backdrop-blur-md rounded-2xl p-4 lg:p-6 border transition-all duration-300 h-full flex flex-col overflow-hidden ${
+                  className={`relative bg-background/80 backdrop-blur-sm md:backdrop-blur-md rounded-2xl p-4 lg:p-6 border transition-all duration-300 h-full flex flex-col overflow-hidden ${
                     hoveredIndex === index
                       ? "-translate-y-1 shadow-xl border-primary/30"
                       : "shadow-lg border-border/50"
                   }`}
+                  style={{ contain: 'layout style paint', transform: 'translateZ(0)' }}
                 >
                   <div className="flex flex-col gap-4">
                     {/* Certificate Image */}
@@ -286,7 +287,7 @@ export default function Certificates() {
                           href={cert.credentialUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-sm font-medium rounded-lg hover:bg-primary/30 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all duration-200 group/btn"
+                          className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-sm font-medium rounded-lg hover:bg-primary/30 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all duration-200 group/btn"
                         >
                           <span>View Credential</span>
                           <svg
@@ -322,7 +323,7 @@ export default function Certificates() {
         <div className="text-center mt-12">
           <a
             href="/certificates"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary font-semibold rounded-xl hover:bg-primary/30 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 hover:scale-105 active:scale-95 transition-all duration-300 group"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary font-semibold rounded-xl hover:bg-primary/30 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 hover:scale-105 active:scale-95 transition-all duration-300 group"
           >
             <span>View All Certificates</span>
             <svg
