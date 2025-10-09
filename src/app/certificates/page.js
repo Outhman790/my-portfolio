@@ -200,7 +200,8 @@ export default function CertificatesPage() {
               <div
                 key={cert.id}
                 id={cert.id}
-                className="group bg-background/80 backdrop-blur-md rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 scroll-mt-24"
+                className="group bg-background/80 backdrop-blur-sm md:backdrop-blur-md rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 scroll-mt-24"
+                style={{ contain: 'layout style paint', transform: 'translateZ(0)' }}
               >
                 {/* Certificate Image */}
                 <div className="relative w-full h-48 rounded-xl overflow-hidden mb-4 shadow-lg">
