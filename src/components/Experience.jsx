@@ -135,7 +135,7 @@ export default function Experience() {
                 <div className="hidden lg:block lg:w-1/2" />
 
                 {/* Experience Card */}
-                <div className="lg:w-1/2 ml-16 lg:ml-0">
+                <div className="lg:w-1/2 ml-6 lg:ml-0">
                   <div
                     className="group bg-background/80 backdrop-blur-sm md:backdrop-blur-md rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
                     style={{ contain: 'layout style paint', transform: 'translateZ(0)' }}
@@ -183,17 +183,17 @@ export default function Experience() {
 
                       {/* Title and Current Badge */}
                       <div className="flex-1">
-                        <div className="flex items-start justify-between gap-2 mb-1">
-                          <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-1">
+                          <h3 className="font-bold text-base md:text-lg group-hover:text-primary transition-colors">
                             {exp.title}
                           </h3>
                           {exp.current && (
-                            <span className="flex-shrink-0 px-2.5 py-1 bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold rounded-full shadow-lg animate-pulse">
+                            <span className="flex-shrink-0 px-2.5 py-1 bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold rounded-full shadow-lg animate-pulse self-start">
                               Current
                             </span>
                           )}
                         </div>
-                        <div className="text-sm font-semibold text-foreground/80 mb-1">
+                        <div className="text-sm font-semibold text-foreground/80 mb-1 break-words">
                           {exp.organization}
                         </div>
                         <div className="flex items-center gap-2 text-xs text-foreground/60">
@@ -255,7 +255,7 @@ export default function Experience() {
                               d="m8.25 4.5 7.5 7.5-7.5 7.5"
                             />
                           </svg>
-                          <span>{item}</span>
+                          <span className="break-words">{item}</span>
                         </li>
                       ))}
                     </ul>
