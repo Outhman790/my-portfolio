@@ -4,13 +4,13 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Certificates from "@/components/Certificates";
 import Contact from "@/components/Contact";
-import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
     <main>
-      <ThemeToggle />
-      <Hero />
+      <div id="home">
+        <Hero />
+      </div>
       <About />
       <Experience />
       <Projects />
