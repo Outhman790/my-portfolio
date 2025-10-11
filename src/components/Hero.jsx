@@ -1,4 +1,6 @@
 import Image from "next/image";
+import SplitText from "./animations/SplitText";
+import TypingText from "./animations/TypingText";
 
 export default function Hero() {
   return (
@@ -19,13 +21,18 @@ export default function Hero() {
           {/* Name & Title */}
           <div className="space-y-4">
             <h1 className="font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Outhman Moumou
+              <SplitText text="Outhman Moumou" delay={0.3} charDelay={0.05} />
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl">
               Full-Stack Web Developer & Junior DevOps/Cloud Engineer
             </p>
             <p className="text-lg md:text-xl text-foreground/60 max-w-3xl">
-              From code to cloud: I build clean, scalable, and highly available web applications.
+              <TypingText
+                text="From code to cloud: I build clean, scalable, and highly available web applications."
+                typingSpeed={40}
+                delay={1.5}
+                showCursor={true}
+              />
             </p>
           </div>
 
