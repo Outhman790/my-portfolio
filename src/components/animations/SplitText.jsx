@@ -32,19 +32,11 @@ export default function SplitText({
   const characters = text.split("");
 
   return (
-    <span
-      ref={ref}
-      className={className}
-      style={{
-        display: "inline-block",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: className?.includes("text-transparent") ? "transparent" : undefined,
-      }}
-    >
+    <span ref={ref} style={{ display: "inline" }}>
       {characters.map((char, index) => (
         <span
           key={index}
-          className="inline-block"
+          className={`inline-block ${className}`}
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(20px)",
