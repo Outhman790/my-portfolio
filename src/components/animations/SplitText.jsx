@@ -32,7 +32,15 @@ export default function SplitText({
   const characters = text.split("");
 
   return (
-    <span ref={ref} className={className} style={{ display: "inline-block" }}>
+    <span
+      ref={ref}
+      className={className}
+      style={{
+        display: "inline-block",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: className?.includes("text-transparent") ? "transparent" : undefined,
+      }}
+    >
       {characters.map((char, index) => (
         <span
           key={index}
