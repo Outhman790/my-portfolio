@@ -5,6 +5,8 @@ import { useState, useEffect, useCallback } from "react";
 export default function CircularProjectGallery({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   const handleNext = useCallback(() => {
     if (isAnimating) return;
@@ -25,6 +27,36 @@ export default function CircularProjectGallery({ projects }) {
     setIsAnimating(true);
     setActiveIndex(index);
     setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  // Touch handlers for swipe navigation
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50; // Minimum distance for a swipe
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      // Swiped left - go to next
+      handleNext();
+    } else {
+      // Swiped right - go to previous
+      handlePrev();
+    }
+
+    // Reset touch positions
+    setTouchStart(0);
+    setTouchEnd(0);
   };
 
   const getPositionClass = (index) => {
@@ -73,7 +105,12 @@ export default function CircularProjectGallery({ projects }) {
   return (
     <div className="relative w-full min-h-[600px] flex items-center justify-center py-12">
       {/* Main Gallery Container */}
-      <div className="relative w-full max-w-7xl h-[550px]">
+      <div
+        className="relative w-full max-w-7xl h-[550px]"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {/* Project Cards */}
         {projects.map((project, index) => {
           const positionClass = getPositionClass(index);
@@ -224,7 +261,7 @@ export default function CircularProjectGallery({ projects }) {
         <button
           onClick={handlePrev}
           disabled={isAnimating}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-40 p-4 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full hover:bg-primary/30 hover:scale-110 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-40 p-4 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full hover:bg-primary/30 hover:scale-110 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Previous project"
         >
           <svg
@@ -246,7 +283,7 @@ export default function CircularProjectGallery({ projects }) {
         <button
           onClick={handleNext}
           disabled={isAnimating}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-40 p-4 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full hover:bg-primary/30 hover:scale-110 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-40 p-4 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full hover:bg-primary/30 hover:scale-110 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Next project"
         >
           <svg
