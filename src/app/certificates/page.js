@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CertificatesPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -18,7 +19,7 @@ export default function CertificatesPage() {
       description: "Master infrastructure as code with Terraform on AWS. Learn to automate cloud resource provisioning and management efficiently.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/terraform-aws.png",
+      image: "/Essential Terraform in AWS.jpg",
     },
     {
       id: "devops-cicd",
@@ -30,7 +31,7 @@ export default function CertificatesPage() {
       description: "Comprehensive guide to CI/CD pipelines and DevOps practices. Build automated workflows for seamless software delivery.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/devops-foundations.png",
+      image: "/Devops Foundations Continous Delivery Continuous Integration.jpg",
     },
     {
       id: "nodejs-express-website",
@@ -42,7 +43,7 @@ export default function CertificatesPage() {
       description: "Create dynamic web applications using Node.js and Express framework. Learn routing, middleware, and server-side development.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/nodejs-express.png",
+      image: "/Building a Website with Node js and Express js.jpg",
     },
     {
       id: "express-essentials",
@@ -54,7 +55,7 @@ export default function CertificatesPage() {
       description: "Deep dive into Express.js fundamentals. Build robust RESTful APIs and scalable backend applications with best practices.",
       featured: false,
       credentialUrl: "#",
-      image: "/certificates/express-essentials.png",
+      image: "/Express Essentials Build Powerful Web Apps with Node js.jpg",
     },
     {
       id: "ai-music-visualizer",
@@ -66,7 +67,7 @@ export default function CertificatesPage() {
       description: "Combine AI and React to create interactive music visualizations. Explore generative algorithms and real-time rendering techniques.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/ai-music-visualizer.png",
+      image: "/Building a Generative AI Music Visualizer with Javascript and React.jpg",
     },
     {
       id: "js-async",
@@ -78,7 +79,7 @@ export default function CertificatesPage() {
       description: "Master asynchronous JavaScript patterns including promises, async/await, and callbacks for efficient code execution.",
       featured: false,
       credentialUrl: "#",
-      image: "/certificates/js-async.png",
+      image: "/Javascript Async.jpg",
     },
     {
       id: "react-essential",
@@ -90,7 +91,7 @@ export default function CertificatesPage() {
       description: "Complete React.js foundation course. Learn components, hooks, state management, and modern React development patterns.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/react-essential.png",
+      image: "/React.js Essentials Training.jpg",
     },
   ];
 
@@ -207,10 +208,12 @@ export default function CertificatesPage() {
                 <div className="relative w-full h-48 rounded-xl overflow-hidden mb-4 shadow-lg">
                   <div className="relative w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/20">
                     {cert.image ? (
-                      <img
+                      <Image
                         src={cert.image}
                         alt={cert.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
