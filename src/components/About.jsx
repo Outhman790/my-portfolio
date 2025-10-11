@@ -10,7 +10,7 @@ import {
   SiPostgresql,
   SiMongodb,
   SiDocker,
-  SiKubernetes,
+  SiPlaywright,
   SiGit,
   SiPhp,
   SiMysql,
@@ -32,7 +32,7 @@ export default function About() {
     { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
     { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
-    { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
+    { name: "Playwright", icon: SiPlaywright, color: "#2EAD33" },
     { name: "AWS", icon: FaAws, color: "#FF9900" },
     { name: "Git", icon: SiGit, color: "#F05032" },
   ];
