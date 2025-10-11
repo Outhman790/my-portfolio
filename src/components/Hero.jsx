@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import SplitText from "./animations/SplitText";
 import TypingText from "./animations/TypingText";
@@ -53,14 +55,30 @@ export default function Hero() {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="mt-12 animate-bounce">
+          <button
+            onClick={() => {
+              const aboutSection = document.getElementById("about");
+              if (aboutSection) {
+                const offset = 80; // Navbar height
+                const elementPosition = aboutSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - offset;
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }}
+            className="mt-12 animate-bounce cursor-pointer group transition-transform hover:scale-125 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full p-2"
+            aria-label="Scroll to About section"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-6 h-6 text-foreground/40"
+              className="w-6 h-6 text-foreground/40 group-hover:text-primary transition-colors duration-300"
             >
               <path
                 strokeLinecap="round"
@@ -68,7 +86,7 @@ export default function Hero() {
                 d="m19.5 8.25-7.5 7.5-7.5-7.5"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </section>
