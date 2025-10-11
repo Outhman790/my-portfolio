@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Certificates() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -16,7 +17,7 @@ export default function Certificates() {
       description: "Master infrastructure as code with Terraform on AWS. Learn to automate cloud resource provisioning and management efficiently.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/terraform-aws.png",
+      image: "/Essential Terraform in AWS.jpg",
     },
     {
       id: "devops-cicd",
@@ -28,7 +29,7 @@ export default function Certificates() {
       description: "Comprehensive guide to CI/CD pipelines and DevOps practices. Build automated workflows for seamless software delivery.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/devops-foundations.png",
+      image: "/Devops Foundations Continous Delivery Continuous Integration.jpg",
     },
     {
       id: "nodejs-express-website",
@@ -40,7 +41,7 @@ export default function Certificates() {
       description: "Create dynamic web applications using Node.js and Express framework. Learn routing, middleware, and server-side development.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/nodejs-express.png",
+      image: "/Building a Website with Node.js and Express js.jpg",
     },
     {
       id: "express-essentials",
@@ -52,7 +53,7 @@ export default function Certificates() {
       description: "Deep dive into Express.js fundamentals. Build robust RESTful APIs and scalable backend applications with best practices.",
       featured: false,
       credentialUrl: "#",
-      image: "/certificates/express-essentials.png",
+      image: "/Express Essentials Build Powerful Web Apps with Node.js.jpg",
     },
     {
       id: "ai-music-visualizer",
@@ -64,7 +65,7 @@ export default function Certificates() {
       description: "Combine AI and React to create interactive music visualizations. Explore generative algorithms and real-time rendering techniques.",
       featured: false,
       credentialUrl: "#",
-      image: "/certificates/ai-music-visualizer.png",
+      image: "/Building a Generative AI Music Visualizer with Javascript and React.jpg",
     },
     {
       id: "js-async",
@@ -76,7 +77,7 @@ export default function Certificates() {
       description: "Master asynchronous JavaScript patterns including promises, async/await, and callbacks for efficient code execution.",
       featured: false,
       credentialUrl: "#",
-      image: "/certificates/js-async.png",
+      image: "/Javascript Async.jpg",
     },
     {
       id: "react-essential",
@@ -88,7 +89,7 @@ export default function Certificates() {
       description: "Complete React.js foundation course. Learn components, hooks, state management, and modern React development patterns.",
       featured: true,
       credentialUrl: "#",
-      image: "/certificates/react-essential.png",
+      image: "/React.js Essentials Training.jpg",
     }
   ];
 
@@ -155,41 +156,38 @@ export default function Certificates() {
                   <div className="flex flex-col gap-4">
                     {/* Certificate Image */}
                     <div className="flex-shrink-0">
-                      <div className="relative w-full h-48 rounded-xl overflow-hidden transition-all duration-300 shadow-lg">
+                      <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden transition-all duration-300 shadow-lg">
                         {/* Subtle shine effect on hover */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 z-10" />
 
                         {/* Image or Placeholder */}
                         <div className="relative w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/20">
                           {cert.image ? (
-                            <img
+                            <Image
                               src={cert.image}
                               alt={cert.title}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                // Fallback to icon if image doesn't exist
-                                e.target.style.display = 'none';
-                                e.target.nextElementSibling.style.display = 'flex';
-                              }}
+                              fill
+                              className="object-contain"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
-                          ) : null}
-                          {/* Fallback Icon */}
-                          <div className={`absolute inset-0 flex items-center justify-center ${cert.image ? 'hidden' : 'flex'}`}>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.5}
-                              stroke="currentColor"
-                              className="w-16 h-16 text-primary"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-                              />
-                            </svg>
-                          </div>
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-16 h-16 text-primary"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+                                />
+                              </svg>
+                            </div>
+                          )}
                         </div>
 
                         {/* Category Badge - Glassmorphic */}
