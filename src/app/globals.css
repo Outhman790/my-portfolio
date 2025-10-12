@@ -53,7 +53,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior removed to allow custom JS smooth scroll */
 }
 
 body {

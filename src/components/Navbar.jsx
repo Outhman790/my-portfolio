@@ -95,6 +95,32 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
+  // Easing function for smooth scroll
+  const easeInOutCubic = (t) => {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+  };
+
+  const smoothScrollTo = (targetPosition, duration = 800) => {
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    const animation = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easing = easeInOutCubic(progress);
+
+      window.scrollTo(0, startPosition + distance * easing);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
+
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const id = href.replace("#", "");
@@ -105,10 +131,7 @@ export default function Navbar() {
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      smoothScrollTo(offsetPosition);
     }
 
     setIsMobileMenuOpen(false);

@@ -5,6 +5,42 @@ import SplitText from "./animations/SplitText";
 import TypingText from "./animations/TypingText";
 
 export default function Hero() {
+  // Easing function for smooth scroll
+  const easeInOutCubic = (t) => {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+  };
+
+  const smoothScrollTo = (targetPosition, duration = 800) => {
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    const animation = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easing = easeInOutCubic(progress);
+
+      window.scrollTo(0, startPosition + distance * easing);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
+
+  const handleScrollClick = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      const offset = 80; // Navbar height
+      const elementPosition = aboutSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+      smoothScrollTo(offsetPosition);
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center section-padding">
       <div className="container-width text-center">
@@ -60,19 +96,7 @@ export default function Hero() {
 
           {/* Scroll Indicator */}
           <button
-            onClick={() => {
-              const aboutSection = document.getElementById("about");
-              if (aboutSection) {
-                const offset = 80; // Navbar height
-                const elementPosition = aboutSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - offset;
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
-            }}
+            onClick={handleScrollClick}
             className="mt-12 animate-bounce cursor-pointer group transition-transform hover:scale-125 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full p-2"
             aria-label="Scroll to About section"
           >
