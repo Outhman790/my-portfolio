@@ -22,12 +22,11 @@ export default function Hero() {
 
           {/* Name & Title */}
           <div className="space-y-4">
-            <h1 className="font-bold">
+            <h1 className="font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               <SplitText
                 text="Outhman Moumou"
                 delay={0.3}
                 charDelay={0.05}
-                className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
               />
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl">

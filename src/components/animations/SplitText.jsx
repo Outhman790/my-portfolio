@@ -32,15 +32,14 @@ export default function SplitText({
   const characters = text.split("");
 
   return (
-    <span ref={ref} style={{ display: "inline" }}>
+    <span ref={ref} className={className} style={{ display: "inline-block" }}>
       {characters.map((char, index) => (
         <span
           key={index}
-          className={`inline-block ${className}`}
           style={{
+            display: "inline-block",
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(20px)",
-            transition: `opacity 0.5s ${index * charDelay}s, transform 0.5s ${index * charDelay}s`,
+            transition: `opacity 0.5s ${index * charDelay}s`,
           }}
         >
           {char === " " ? "\u00A0" : char}
