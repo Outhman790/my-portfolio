@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import { scrollToElement } from "@/utils/smoothScroll";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
@@ -95,45 +96,10 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
-  // Easing function for smooth scroll
-  const easeInOutCubic = (t) => {
-    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-  };
-
-  const smoothScrollTo = (targetPosition, duration = 800) => {
-    const startPosition = window.scrollY;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
-
-    const animation = (currentTime) => {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      const easing = easeInOutCubic(progress);
-
-      window.scrollTo(0, startPosition + distance * easing);
-
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      }
-    };
-
-    requestAnimationFrame(animation);
-  };
-
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const id = href.replace("#", "");
-    const element = document.getElementById(id);
-
-    if (element) {
-      const offset = 80; // Navbar height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - offset;
-
-      smoothScrollTo(offsetPosition);
-    }
-
+    scrollToElement(id);
     setIsMobileMenuOpen(false);
   };
 
