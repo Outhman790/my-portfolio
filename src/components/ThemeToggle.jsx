@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ inline = false }) {
   const [theme, setTheme] = useState(null);
 
   useEffect(() => {
@@ -27,7 +27,10 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 p-3 rounded-full bg-muted hover:bg-border transition-colors duration-200 group"
+      className={inline
+        ? "p-3 rounded-full bg-muted hover:bg-border transition-colors duration-200 group"
+        : "fixed bottom-6 right-6 md:hidden z-50 p-3 rounded-full bg-muted hover:bg-border transition-colors duration-200 group"
+      }
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
