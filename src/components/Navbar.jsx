@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import { scrollToElement } from "@/utils/smoothScroll";
 
@@ -11,7 +12,8 @@ export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [theme, setTheme] = useState(null);
+  
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -96,6 +98,30 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
+  // Detect theme changes
+  useEffect(() => {
+    // Get initial theme
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    setTheme(initialTheme);
+
+    // Listen for theme changes
+    const observer = new MutationObserver(() => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      if (currentTheme) {
+        setTheme(currentTheme);
+      }
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const id = href.replace("#", "");
@@ -105,6 +131,9 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Mobile-only fixed theme toggle */}
+      <ThemeToggle />
+
       {/* Navbar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -116,13 +145,21 @@ export default function Navbar() {
         }`}
       >
         <div className="container-width">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo/Name */}
             <Link
               href="/"
               className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
-              Outhman Moumou
+             {theme && (
+               <Image
+                 src={theme === "dark" ? "/logo-dark.svg" : "/logo-light.svg"}
+                 alt="Logo"
+                 width={70}
+                 height={70}
+                 priority
+               />
+             )}
             </Link>
 
             {/* Desktop Navigation */}
@@ -148,13 +185,12 @@ export default function Navbar() {
                 );
               })}
 
-              {/* Theme Toggle */}
-              <ThemeToggle />
+              {/* Desktop theme toggle */}
+              <ThemeToggle inline />
             </div>
 
             {/* Mobile Menu Button */}
             <div className="flex md:hidden items-center gap-4">
-              <ThemeToggle />
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="hamburger-btn p-2 text-foreground hover:text-primary transition-colors"
