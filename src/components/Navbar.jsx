@@ -153,10 +153,10 @@ export default function Navbar() {
             >
              {theme && (
                <Image
-                 src={theme === "dark" ? "/logo-dark.svg" : "/logo-light.svg"}
+                 src={theme === "dark" ? "/logo-dark.png" : "/logo-light.png"}
                  alt="Logo"
-                 width={70}
-                 height={70}
+                 width={90}
+                 height={90}
                  priority
                />
              )}

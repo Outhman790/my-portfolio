@@ -12,6 +12,18 @@ export const certificates = [
     image: "/Essential Terraform in AWS.jpg",
   },
   {
+    id: "aws-cloud-technical",
+    title: "AWS Cloud Technical Essentials",
+    issuer: "Amazon Web Services",
+    date: "Oct 2025",
+    category: "Cloud",
+    skills: ["AWS", "Cloud"],
+    description: "Demonstrates foundational knowledge of AWS core services including EC2, S3, RDS, DynamoDB, VPC, IAM, Lambda, and CloudWatch. Covers essential cloud architecture, security best practices, and cost optimization strategies for building scalable AWS solutions.",
+    featured: true,
+    credentialUrl: "https://www.coursera.org/account/accomplishments/verify/L573C80KH5OI",
+    image: "/Coursera L573C80KH5OI-1.png",
+  },
+  {
     id: "devops-cicd",
     title: "DevOps Foundations: Continuous Delivery/Continuous Integration",
     issuer: "LinkedIn Learning",
@@ -33,7 +45,7 @@ export const certificates = [
     description: "Create dynamic web applications using Node.js and Express framework. Learn routing, middleware, and server-side development.",
     featured: true,
     credentialUrl: "https://www.linkedin.com/learning/certificates/0a1f5f57d7efe38c3ff4e0bb200baa09fb3104012d0e28827a98bf4b7230967b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B9w9czbI4ThKopcAciEfrHA%3D%3D",
-    image: "/Building a Website with Node js and Express js.jpg",
+    image: "/Building a Website with Node.js and Express js.jpg",
   },
   {
     id: "express-essentials",
@@ -93,7 +105,7 @@ export const certificates = [
     description: "Build and deploy full-stack applications with Next.js. Learn server-side rendering, API routes, and modern hosting solutions.",
     featured: true,
     credentialUrl: "https://www.linkedin.com/learning/certificates/a92fdf9f267500d2a577f35fadfb44a422eee8ce944b649a16a9dfbb80aa3610",
-    image: "/NEXT JS creating and hosting a fullstack site.PNG",
+    image: "/NEXT JS creating and hosting a fullstack site.png",
   }
 ];
 
