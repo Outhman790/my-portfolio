@@ -42,32 +42,8 @@ export default function CertificatesSection() {
           </p>
         </div>
 
-        {/* Certificates Grid - Featured Only */}
-        <CertificateGrid certificates={certificates} featuredOnly={true} showFullDescription={false} />
-
-        {/* View All Certificates Button */}
-        <div className="text-center mt-12">
-          <a
-            href="/certificates"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary font-semibold rounded-xl hover:bg-primary/30 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 hover:scale-105 active:scale-95 transition-all duration-300 group"
-          >
-            <span>View All Certificates</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </a>
-        </div>
+        {/* Certificates List - Minimal Style */}
+        <CertificateGrid certificates={certificates} featuredOnly={true} showFullDescription={false} minimal={true} />
       </div>
 
       {/* Custom Animation */}
