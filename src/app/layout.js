@@ -17,6 +17,14 @@ export const metadata = {
   description: "Full-Stack Web Developer & Junior DevOps/Cloud Engineer. From code to cloud: I build clean, scalable, and highly available web applications.",
   keywords: ["Full-Stack Developer", "DevOps Engineer", "Cloud Engineer", "Web Development", "React", "Next.js", "Node.js"],
   authors: [{ name: "Outhman Moumou" }],
+  icons: {
+    icon: [
+      { url: "/logo-dark.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo-dark.png", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "Outhman Moumou | Full-Stack Developer & DevOps Engineer",
     description: "From code to cloud: I build clean, scalable, and highly available web applications.",
