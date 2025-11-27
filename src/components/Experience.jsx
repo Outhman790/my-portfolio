@@ -1,76 +1,8 @@
 "use client";
 
+import { experiences } from "@/data/experiences";
+
 export default function Experience() {
-  const experiences = [
-    {
-      id: "freelance-2024",
-      type: "work",
-      title: "Freelance Full-Stack Developer",
-      organization: "Self-Employed",
-      location: "Morocco",
-      period: "2024 - Present",
-      current: true,
-      description: [
-        "Building custom web solutions for local businesses and international clients",
-        "Developing modern, scalable applications with cutting-edge technologies",
-        "Managing full project lifecycle from requirements to deployment",
-        "Implementing cloud infrastructure and DevOps best practices",
-      ],
-      technologies: ["React", "Next.js", "Node.js", "Express", "AWS", "Docker", "PostgreSQL"],
-      achievements: "10+ Successful Projects Delivered",
-    },
-    {
-      id: "internship-2023",
-      type: "work",
-      title: "Full-Stack Development Intern",
-      organization: "Tech Solutions Morocco",
-      location: "Morocco",
-      period: "Jun 2023 - Dec 2023",
-      current: false,
-      description: [
-        "Developed and maintained WordPress websites with custom themes and plugins",
-        "Built full-stack web applications using modern JavaScript frameworks",
-        "Deployed and managed applications on AWS cloud infrastructure",
-        "Collaborated with senior developers on production-level projects",
-      ],
-      technologies: ["WordPress", "PHP", "JavaScript", "AWS", "MySQL", "React"],
-      achievements: "6 Months Production Experience",
-    },
-    {
-      id: "bootcamp-2022",
-      type: "education",
-      title: "Web Development Bootcamp",
-      organization: "Solicode",
-      location: "Morocco",
-      period: "2022 - 2023",
-      current: false,
-      description: [
-        "Intensive full-stack web development training program",
-        "Mastered modern web technologies and development methodologies",
-        "Built real-world projects including e-commerce and CMS applications",
-        "Completed comprehensive capstone project (fil-rouge)",
-      ],
-      technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "React", "Git"],
-      achievements: "Honor Graduate",
-    },
-    {
-      id: "highschool-2021",
-      type: "education",
-      title: "High School Diploma",
-      organization: "IBN EL KHATIB High School",
-      location: "Morocco",
-      period: "2021 - 2022",
-      current: false,
-      description: [
-        "Completed scientific and technical track with distinction",
-        "Strong foundation in mathematics, physics, and computer science",
-        "Developed early interest in programming and technology",
-        "Prepared for career in software development",
-      ],
-      technologies: [],
-      achievements: "Scientific Track",
-    },
-  ];
 
   return (
     <section id="experience" className="section-padding relative overflow-hidden">
