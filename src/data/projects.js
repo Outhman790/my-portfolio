@@ -1,16 +1,5 @@
 export const projects = [
   {
-    id: "ogallery",
-    title: "OGallery",
-    description: "A modern, user-centric image gallery application built with React, Tailwind CSS, Express and AWS. Features include image upload, gallery management, and cloud storage integration.",
-    tech: ["React", "Tailwind CSS", "Express", "AWS"],
-    category: "Full Stack",
-    demo: "#",
-    github: "https://github.com/Outhman790/OGallery",
-    stars: 1,
-    featured: true,
-  },
-  {
     id: "fil-rouge",
     title: "fil-rouge",
     description: "Final Year Project of SOLICODE - A comprehensive full-stack web application demonstrating advanced web development concepts and best practices.",
