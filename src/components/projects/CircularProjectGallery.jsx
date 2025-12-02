@@ -107,7 +107,7 @@ export default function CircularProjectGallery({ projects }) {
     <div className="relative w-full min-h-[600px] flex items-center justify-center py-12">
       {/* Main Gallery Container */}
       <div
-        className="relative w-full max-w-7xl h-[550px]"
+        className="relative w-full max-w-7xl h-[550px] overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -202,6 +202,7 @@ export default function CircularProjectGallery({ projects }) {
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           width: 400px;
           height: 500px;
+          overflow: hidden;
         }
 
         .active-center {
@@ -222,7 +223,9 @@ export default function CircularProjectGallery({ projects }) {
           left: 5%;
           top: 50%;
           transform: translate(-50%, -50%) scale(0.6);
-          opacity: 0.3;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
         }
 
         .right-1 {
@@ -236,11 +239,14 @@ export default function CircularProjectGallery({ projects }) {
           left: 95%;
           top: 50%;
           transform: translate(-50%, -50%) scale(0.6);
-          opacity: 0.3;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
         }
 
         .hidden-item {
           opacity: 0;
+          visibility: hidden;
           pointer-events: none;
           transform: translate(-50%, -50%) scale(0.5);
         }
