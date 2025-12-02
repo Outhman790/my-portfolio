@@ -36,6 +36,18 @@ export const certificates = [
     image: "/Devops Foundations Continous Delivery Continuous Integration.jpg",
   },
   {
+    id: "agile-scrum",
+    title: "Introduction to Agile Development and Scrum",
+    issuer: "LinkedIn Learning",
+    date: "Dec 2025",
+    category: "DevOps",
+    skills: ["Agile", "Scrum"],
+    description: "Foundational understanding of Agile methodologies and Scrum framework. Learn sprint planning, daily standups, and iterative development practices.",
+    featured: false,
+    credentialUrl: "",
+    image: "",
+  },
+  {
     id: "nodejs-express-website",
     title: "Building a Website with Node.js and Express.js",
     issuer: "LinkedIn Learning",
