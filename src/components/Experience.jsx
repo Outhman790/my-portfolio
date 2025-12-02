@@ -249,12 +249,12 @@ export default function Experience() {
             <div className="text-sm text-foreground/60">Years Journey</div>
           </div>
           <div className="text-center p-6 bg-background/50 backdrop-blur-sm md:backdrop-blur-md rounded-xl border border-border hover:border-primary/30 transition-all duration-300" style={{ contain: 'layout style paint', transform: 'translateZ(0)' }}>
-            <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">10+</div>
+            <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">30+</div>
             <div className="text-sm text-foreground/60">Projects Done</div>
           </div>
           <div className="text-center p-6 bg-background/50 backdrop-blur-sm md:backdrop-blur-md rounded-xl border border-border hover:border-primary/30 transition-all duration-300" style={{ contain: 'layout style paint', transform: 'translateZ(0)' }}>
-            <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">6</div>
-            <div className="text-sm text-foreground/60">Months Intern</div>
+            <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">10+</div>
+            <div className="text-sm text-foreground/60">Certificates</div>
           </div>
           <div className="text-center p-6 bg-background/50 backdrop-blur-sm md:backdrop-blur-md rounded-xl border border-border hover:border-primary/30 transition-all duration-300" style={{ contain: 'layout style paint', transform: 'translateZ(0)' }}>
             <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">15+</div>
