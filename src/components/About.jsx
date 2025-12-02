@@ -83,7 +83,7 @@ export default function About() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-6">
               <div className="text-center p-4 bg-background/50 rounded-xl border border-border">
-                <div className="text-3xl font-bold text-primary mb-1">29</div>
+                <div className="text-3xl font-bold text-primary mb-1">30+</div>
                 <div className="text-sm text-foreground/60">Projects</div>
               </div>
               <div className="text-center p-4 bg-background/50 rounded-xl border border-border">
