@@ -43,17 +43,6 @@ export const projects = [
     stars: 0,
     featured: false,
   },
-  {
-    id: "mealdb-api",
-    title: "MealDB API",
-    description: "Web application utilizing the MealDB API to browse and search recipes. Features recipe search, filtering, and detailed recipe information.",
-    tech: ["JavaScript", "API", "HTML/CSS"],
-    category: "Frontend",
-    demo: "#",
-    github: "https://github.com/Outhman790/MealDb-API-",
-    stars: 0,
-    featured: false,
-  },
 ];
 
 export const projectCategories = ["All", "Full Stack", "Frontend", "Backend", "Algorithms"];
