@@ -5,7 +5,7 @@ export const experiences = [
     title: "Web Developer",
     organization: "Youraws · Freelance",
     location: "Tangier, Tanger-Tetouan-Al Hoceim, Morocco",
-    period: "Sep 2023 - Dec 2023 · 4 months",
+    period: "Sep 2023 - Nov 2023 · 3 months",
     current: false,
     description: [
       "Tailored development of websites and applications",
@@ -13,7 +13,7 @@ export const experiences = [
       "Cloud services deployment and management, including AWS (S3, EC2, RDS, etc.) and WordPress",
     ],
     technologies: ["AWS", "UML", "GitHub", "PHP OOP", "Node.js", "SQL", "Git", "WordPress", "Express.js", "Python", "MySQL", "Cloud Computing", "Merise"],
-    achievements: "4 Months Freelance Experience",
+    achievements: "3 Months Freelance Experience",
   },
   {
     id: "dena-internship",
@@ -29,7 +29,7 @@ export const experiences = [
       "Strengthened ability to deliver clean, reliable solutions while maintaining a strong sense of rigor and professionalism",
     ],
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Bootstrap", "jQuery", "JavaScript", "HTML5", "CSS3"],
-    achievements: "Full-Stack Development",
+    achievements: "Property Management Platform",
   },
   {
     id: "bootcamp-2022",
