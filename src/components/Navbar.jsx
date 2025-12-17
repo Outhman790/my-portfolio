@@ -3,10 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import { scrollToElement } from "@/utils/smoothScroll";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -125,7 +128,15 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const id = href.replace("#", "");
-    scrollToElement(id);
+
+    // If we're on the homepage, scroll to the section
+    if (pathname === "/") {
+      scrollToElement(id);
+    } else {
+      // If we're on another page, navigate to homepage with hash
+      router.push(`/${href}`);
+    }
+
     setIsMobileMenuOpen(false);
   };
 
