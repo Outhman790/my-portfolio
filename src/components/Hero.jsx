@@ -45,7 +45,7 @@ export default function Hero() {
               />
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl">
-              Full-Stack Web Developer & Junior DevOps/Cloud Engineer
+              Full-Stack Developer & DevOps Enthusiast
             </p>
             <p className="text-lg md:text-xl text-foreground/60 max-w-3xl">
               <TypingText
