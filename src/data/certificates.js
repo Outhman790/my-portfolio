@@ -44,8 +44,8 @@ export const certificates = [
     skills: ["Agile", "Scrum"],
     description: "Foundational understanding of Agile methodologies and Scrum framework. Learn sprint planning, daily standups, and iterative development practices.",
     featured: false,
-    credentialUrl: "",
-    image: "",
+    credentialUrl: "https://www.coursera.org/account/accomplishments/verify/K2CT10QBLA1J",
+    image: "/Introduction to Agile Development and Scrum.png",
   },
   {
     id: "nodejs-express-website",
