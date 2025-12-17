@@ -1,13 +1,31 @@
 "use client";
 
-export default function ProjectCard({ project, isActive = true, showActions = true }) {
+export default function ProjectCard({ project, isActive = true, showActions = true, onCardClick }) {
+  const handleCardClick = () => {
+    if (onCardClick) {
+      onCardClick(project);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if ((e.key === "Enter" || e.key === " ") && onCardClick) {
+      e.preventDefault();
+      onCardClick(project);
+    }
+  };
+
   return (
     <div
+      onClick={handleCardClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${project.title}`}
       className={`relative bg-background/80 backdrop-blur-sm md:backdrop-blur-md rounded-2xl border overflow-hidden transition-all duration-500 h-full flex flex-col ${
         isActive
           ? "shadow-2xl border-primary/30 scale-100"
           : "shadow-lg border-border/50 hover:border-primary/20 scale-90 opacity-60"
-      }`}
+      } ${onCardClick ? 'cursor-pointer hover:scale-[1.02]' : ''}`}
       style={{ contain: 'layout style paint', transform: 'translateZ(0)' }}
     >
       {/* Project Image/Preview */}
@@ -15,30 +33,70 @@ export default function ProjectCard({ project, isActive = true, showActions = tr
         {/* Subtle shine effect on hover */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 z-10" />
 
-        {/* Placeholder - You can replace with actual images */}
-        <div className="flex flex-col items-center justify-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-16 h-16 text-primary"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
-            />
-          </svg>
-          <span className="text-sm text-primary font-semibold">
-            {project.title}
-          </span>
-        </div>
+        {/* Project Image or Placeholder */}
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-16 h-16 text-primary"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+              />
+            </svg>
+            <span className="text-sm text-primary font-semibold">
+              {project.title}
+            </span>
+          </div>
+        )}
+
+        {/* Category Badge (if available) */}
+        {project.category && (
+          <div className="absolute top-3 left-3">
+            <div className="px-3 py-1 bg-secondary/90 backdrop-blur-sm text-white text-xs font-bold rounded-full shadow-lg border border-white/20">
+              {project.category}
+            </div>
+          </div>
+        )}
+
+        {/* Date Badge */}
+        {project.date && (
+          <div className="absolute top-3 right-3">
+            <div className="px-3 py-1 bg-foreground/80 backdrop-blur-sm text-background text-xs font-semibold rounded-full shadow-lg border border-white/20 flex items-center gap-1.5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-3 h-3"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                />
+              </svg>
+              {new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+            </div>
+          </div>
+        )}
 
         {/* GitHub Stars Badge */}
         {project.stars > 0 && (
-          <div className="absolute top-3 right-3 px-2.5 py-1 bg-yellow-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1 border border-white/20">
+          <div className="absolute top-14 right-3 px-2.5 py-1 bg-yellow-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1 border border-white/20">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -52,15 +110,6 @@ export default function ProjectCard({ project, isActive = true, showActions = tr
               />
             </svg>
             {project.stars}
-          </div>
-        )}
-
-        {/* Category Badge (if available) */}
-        {project.category && (
-          <div className="absolute top-3 left-3">
-            <div className="px-3 py-1 bg-secondary/90 backdrop-blur-sm text-white text-xs font-bold rounded-full shadow-lg border border-white/20">
-              {project.category}
-            </div>
           </div>
         )}
 
@@ -99,33 +148,37 @@ export default function ProjectCard({ project, isActive = true, showActions = tr
         {/* Action Buttons - Only show when specified */}
         {showActions && isActive && (
           <div className="mt-auto flex gap-3">
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-sm font-medium rounded-lg hover:bg-primary/30 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all duration-200"
-            >
-              <span>Live Demo</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4"
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-sm font-medium rounded-lg hover:bg-primary/30 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all duration-200"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                />
-              </svg>
-            </a>
+                <span>Live Demo</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-4 h-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                  />
+                </svg>
+              </a>
+            )}
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-foreground/5 backdrop-blur-sm border border-border text-foreground text-sm font-medium rounded-lg hover:bg-foreground/10 hover:border-foreground/30 hover:shadow-lg active:scale-95 transition-all duration-200"
+              onClick={(e) => e.stopPropagation()}
+              className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-foreground/5 backdrop-blur-sm border border-border text-foreground text-sm font-medium rounded-lg hover:bg-foreground/10 hover:border-foreground/30 hover:shadow-lg active:scale-95 transition-all duration-200 ${!project.demo ? 'flex-1' : 'flex-1'}`}
             >
               <span>GitHub</span>
               <svg
