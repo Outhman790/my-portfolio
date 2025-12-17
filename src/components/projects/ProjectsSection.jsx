@@ -43,7 +43,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Circular Project Gallery */}
-        <CircularProjectGallery projects={projects} />
+        <CircularProjectGallery projects={projects.filter(project => project.featured)} />
 
         {/* View All Projects Button */}
         <div className="text-center mt-16">
