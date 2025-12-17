@@ -5,12 +5,25 @@ import { useState } from "react";
 import Link from "next/link";
 import { projects, projectCategories } from "@/data/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectDetailsModal from "@/components/projects/ProjectDetailsModal";
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [sortBy, setSortBy] = useState("stars");
+  const [sortBy, setSortBy] = useState("date");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const categories = projectCategories;
+
+  const handleCardClick = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
 
   // Filter and sort projects
   const filteredAndSortedProjects = projects
@@ -20,6 +33,8 @@ export default function ProjectsPage() {
         return b.stars - a.stars;
       } else if (sortBy === "name") {
         return a.title.localeCompare(b.title);
+      } else if (sortBy === "date") {
+        return new Date(b.date) - new Date(a.date);
       }
       return 0;
     });
@@ -121,6 +136,7 @@ export default function ProjectsPage() {
               className="px-4 py-2 bg-muted/50 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
             >
               <option value="stars">Most Starred</option>
+              <option value="date">Newest First</option>
               <option value="name">Alphabetical</option>
             </select>
           </div>
@@ -133,6 +149,7 @@ export default function ProjectsPage() {
                   project={project}
                   isActive={true}
                   showActions={true}
+                  onCardClick={handleCardClick}
                 />
               </div>
             ))}
@@ -146,6 +163,13 @@ export default function ProjectsPage() {
           )}
         </div>
       </section>
+
+      {/* Project Details Modal */}
+      <ProjectDetailsModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        project={selectedProject}
+      />
     </main>
   );
 }
