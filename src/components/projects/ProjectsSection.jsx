@@ -1,9 +1,23 @@
 "use client";
 
+import { useState } from "react";
 import { projects } from "@/data/projects";
 import CircularProjectGallery from "./CircularProjectGallery";
+import ProjectDetailsModal from "./ProjectDetailsModal";
 
 export default function ProjectsSection() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCardClick = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
   return (
     <section id="projects" className="section-padding relative overflow-hidden">
       {/* Glassmorphism background */}
@@ -43,7 +57,10 @@ export default function ProjectsSection() {
         </div>
 
         {/* Circular Project Gallery */}
-        <CircularProjectGallery projects={projects.filter(project => project.featured)} />
+        <CircularProjectGallery
+          projects={projects.filter(project => project.featured)}
+          onCardClick={handleCardClick}
+        />
 
         {/* View All Projects Button */}
         <div className="text-center mt-16">
@@ -83,6 +100,13 @@ export default function ProjectsSection() {
           </a>
         </div>
       </div>
+
+      {/* Project Details Modal */}
+      <ProjectDetailsModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        project={selectedProject}
+      />
 
       {/* Custom Animation */}
       <style jsx>{`
