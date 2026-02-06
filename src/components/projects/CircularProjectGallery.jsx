@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import ProjectCard from "./ProjectCard";
 
-export default function CircularProjectGallery({ projects }) {
+export default function CircularProjectGallery({ projects, onCardClick }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
@@ -127,6 +127,7 @@ export default function CircularProjectGallery({ projects }) {
                 project={project}
                 isActive={isActive}
                 showActions={true}
+                onCardClick={onCardClick}
               />
             </div>
           );
