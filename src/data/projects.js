@@ -1,17 +1,29 @@
 export const projects = [
   // Featured Full Stack Projects
   {
-    id: "fil-rouge",
-    title: "fil-rouge",
+    id: "Obuildings",
+    title: "Obuildings",
     description: "Final Year Project of SOLICODE - A comprehensive full-stack web application demonstrating advanced web development concepts and best practices.",
+    longDescription: "Obuildings is a comprehensive building and construction management platform developed as the capstone project for the SOLICODE training program. This full-stack web application provides end-to-end solutions for managing construction projects, tracking building resources, coordinating teams, and monitoring project timelines. Built with PHP, MySQL, and vanilla JavaScript, the platform demonstrates proficiency in server-side development, database design, and interactive frontend functionality. The project showcases real-world application architecture with role-based access control, CRUD operations, and responsive design principles.",
     tech: ["PHP", "MySQL", "JavaScript"],
     category: "Full Stack",
-    demo: "#", // Has live demo
+    demo: "https://www.linkedin.com/feed/update/urn:li:activity:7401696742187937792/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7401696742187937792%29",
+    demoLabel: "View Showcase",
     github: "https://github.com/Outhman790/fil-rouge",
     image: "/Obuildings thumbnail.png",
     stars: 0,
     featured: true,
     date: "2023-07-01",
+    features: [
+      "Complete CRUD operations for managing buildings and construction projects",
+      "User authentication and role-based access control system",
+      "MySQL database with normalized schema and complex relationships",
+      "Dynamic dashboard for project tracking and resource management",
+      "Responsive design compatible with desktop and mobile devices",
+      "Server-side validation and security measures against SQL injection"
+    ],
+    challenges: "Designing a scalable database schema that handles complex relationships between projects, resources, and team members was crucial. Implementing secure user authentication from scratch with PHP sessions and preventing SQL injection attacks required careful attention to security best practices. Managing state and dynamic updates on the frontend with vanilla JavaScript without modern frameworks presented unique challenges.",
+    learnings: "Gained comprehensive understanding of full-stack web development with PHP and MySQL. Learned database design principles including normalization, foreign keys, and query optimization. Developed strong skills in server-side security, session management, and implementing authentication systems. Improved understanding of web application architecture and the MVC pattern. This capstone project consolidated all learning from the SOLICODE training program into a production-ready application."
   },
   {
     id: "nextjs-mini-cms",
@@ -24,7 +36,7 @@ export const projects = [
     github: "https://github.com/Outhman790/nextjs-mini-cms-mastery-lab",
     image: null,
     stars: 0,
-    featured: true,
+    featured: false,
     date: "2025-10-29",
     features: [
       "Server Components with direct database queries for optimal performance",
@@ -65,14 +77,26 @@ export const projects = [
     id: "my-portfolio",
     title: "My Portfolio",
     description: "Personal portfolio website showcasing projects, skills, and professional experience with modern web technologies.",
-    tech: ["JavaScript", "HTML", "CSS"],
+    longDescription: "A modern, professional portfolio website built with Next.js to showcase my development journey, technical expertise, and project portfolio. Leveraging Next.js for optimal performance with server-side rendering and static generation, the site provides a seamless user experience with fast page loads and smooth navigation. Features a responsive design with interactive project galleries, detailed case studies, and modern UI/UX patterns that reflect current web development standards.",
+    tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
     category: "Full Stack",
-    demo: "#", // Has live demo
+    demo: null,
     github: "https://github.com/Outhman790/my-portfolio",
     image: null,
     stars: 0,
     featured: false,
     date: "2025-10-05",
+    features: [
+      "Built with Next.js for optimal performance and SEO",
+      "Server-side rendering and static site generation",
+      "Responsive design with Tailwind CSS",
+      "Interactive project showcase with detailed case studies",
+      "Smooth page transitions and animations",
+      "Optimized images with Next.js Image component",
+      "Contact form integration"
+    ],
+    challenges: "Implementing optimal performance while maintaining rich interactions required careful consideration of Next.js rendering strategies. Balancing static generation for fast loads with dynamic content for project updates demanded thoughtful architecture decisions. Creating a unique, memorable design that stands out while remaining professional and accessible was a key design challenge.",
+    learnings: "Deepened understanding of Next.js rendering patterns including SSR, SSG, and ISR. Learned best practices for building performant portfolio sites with modern frameworks. Improved skills in creating engaging user experiences with Tailwind CSS and mastered Next.js Image optimization for better Core Web Vitals scores."
   },
 
   // Frontend Projects
@@ -83,9 +107,9 @@ export const projects = [
     longDescription: "CodeCup is a visually stunning landing page created for a competitive coding event by the DevMinds community. The project showcases advanced frontend development techniques with modern design patterns including gradient backgrounds, glass morphism effects, and smooth animations powered by Framer Motion. Built with Next.js 14 and TypeScript for type safety and optimal performance.",
     tech: ["Next.js 14", "TypeScript", "Framer Motion", "Tailwind CSS"],
     category: "Frontend",
-    demo: "#", // Has live demo
+    demo: null,
     github: "https://github.com/Outhman790/CodeCup",
-    image: null,
+    image: "/CodeCup thumbnail.png",
     stars: 0,
     featured: true,
     date: "2025-07-13",
@@ -102,23 +126,36 @@ export const projects = [
     learnings: "Deepened understanding of Framer Motion animation library, learned advanced CSS techniques for glass morphism and backdrop filters, and improved skills in creating engaging, interactive user interfaces. Gained experience in performance optimization for animation-heavy applications."
   },
   {
-    id: "budget-monitoring",
-    title: "Budget Monitoring",
+    id: "budget-tracker",
+    title: "Budget-Tracker",
     description: "A financial tracking application to monitor and manage personal budgets effectively. Track expenses, set goals, and visualize spending patterns.",
-    tech: ["JavaScript", "HTML", "CSS"],
+    longDescription: "A comprehensive budget tracking and financial management application built with React. This intuitive tool helps users take control of their personal finances by tracking income and expenses, categorizing transactions, and visualizing spending patterns through interactive charts. The application provides real-time budget calculations, alerts for overspending, and historical data analysis to help users make informed financial decisions and achieve their savings goals.",
+    tech: ["React", "JavaScript", "CSS3", "Chart.js", "LocalStorage API"],
     category: "Frontend",
     demo: null,
-    github: "https://github.com/Outhman790/budget-monitoring",
-    image: null,
+    github: "https://github.com/Outhman790/Budget-Tracker",
+    image: "/Budget Tracker thumbnail.png",
     stars: 0,
     featured: false,
     date: "2023-05-15",
+    features: [
+      "React components for modular and reusable UI architecture",
+      "Income and expense tracking with category classification",
+      "Interactive charts and graphs for spending visualization",
+      "Budget goal setting with progress tracking",
+      "LocalStorage for persistent data without backend",
+      "Responsive design for mobile budget tracking on-the-go",
+      "Real-time budget calculations and overspending alerts"
+    ],
+    challenges: "Managing complex state for financial transactions across multiple components required careful React state management. Implementing data persistence using LocalStorage while maintaining synchronization with React state was challenging. Creating meaningful visualizations that effectively communicate financial patterns demanded thoughtful integration of Chart.js with React lifecycle.",
+    learnings: "Gained practical experience in building data-driven React applications with complex state management. Learned how to integrate charting libraries with React components and implement client-side data persistence. Developed skills in financial calculations, data visualization, and creating user-friendly interfaces for complex data management with React."
   },
   {
     id: "solicode-javascript-workshop",
     title: "Solicode JavaScript Workshop",
     description: "Interactive platform for practicing fundamental JavaScript concepts with 10 coding exercises covering variables, conditionals, loops, arrays, and functions through practical applications.",
-    tech: ["JavaScript", "HTML", "CSS"],
+    longDescription: "An educational web platform designed to teach JavaScript fundamentals through hands-on practice. This interactive workshop features 10 carefully crafted coding exercises that progressively build programming skills, covering essential concepts from basic variables and data types to complex array manipulations and function compositions. Each exercise includes clear instructions, example use cases, and immediate feedback, making it an ideal learning tool for beginners starting their JavaScript journey.",
+    tech: ["JavaScript", "HTML5", "CSS3"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/Solicode-JavaScript-Workshop",
@@ -126,12 +163,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-11-11",
+    features: [
+      "10 progressive JavaScript exercises from basics to intermediate",
+      "Interactive code editor for hands-on practice",
+      "Instant feedback and validation for solutions",
+      "Covers variables, conditionals, loops, arrays, and functions",
+      "Step-by-step instructions with practical examples",
+      "Clean, user-friendly interface for focused learning",
+      "Progress tracking across exercises"
+    ],
+    challenges: "Designing exercises that are challenging yet approachable for beginners required careful balance. Implementing a code validation system that provides meaningful feedback without giving away solutions was complex. Creating a progression path that builds skills incrementally while keeping learners engaged demanded thoughtful curriculum design.",
+    learnings: "Developed understanding of educational content design and progressive learning techniques. Gained experience in building interactive code editors and implementing validation logic. Learned the importance of clear instructions and immediate feedback in creating effective learning tools."
   },
   {
     id: "travel-agency-landing",
     title: "Travel Agency Landing Page",
     description: "Designed and created a landing page for a travel agency. Modern, responsive design showcasing travel destinations and services.",
-    tech: ["HTML", "CSS", "Shell"],
+    longDescription: "A professionally designed landing page for a travel agency featuring stunning visuals and engaging content to inspire wanderlust. This responsive website showcases exotic travel destinations, tour packages, and agency services through beautiful imagery, compelling copy, and intuitive navigation. Built with modern HTML5 and CSS3 techniques, the page implements best practices for landing page conversion optimization and user engagement.",
+    tech: ["HTML5", "CSS3", "JavaScript"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/Design-and-create-a-landing-page-for-a-travel-agency",
@@ -139,12 +188,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-11-11",
+    features: [
+      "Eye-catching hero section with destination imagery",
+      "Responsive grid layouts for tour packages",
+      "Interactive destination gallery with hover effects",
+      "Mobile-first responsive design",
+      "Call-to-action sections optimized for conversions",
+      "Smooth scrolling navigation",
+      "Contact section with booking inquiry form"
+    ],
+    challenges: "Creating a visually appealing layout that works across all device sizes while maintaining fast load times required careful image optimization. Balancing aesthetic design with usability and accessibility was crucial. Implementing engaging hover effects and transitions without overwhelming users demanded restraint and good design judgment.",
+    learnings: "Gained experience in creating conversion-focused landing pages with attention to visual hierarchy and user flow. Learned responsive design patterns and mobile-first development approach. Improved skills in CSS layout techniques including Flexbox and Grid for complex, responsive designs."
   },
   {
     id: "web-page-reproduction",
     title: "Web Page Model Reproduction",
     description: "Reproducing a design mockup and converting it into a functional web page, demonstrating pixel-perfect implementation skills.",
-    tech: ["HTML", "CSS"],
+    longDescription: "A frontend development exercise focused on accurately converting a design mockup into a functional, pixel-perfect web page. This project demonstrates attention to detail, precision in CSS implementation, and ability to translate visual designs into clean, semantic HTML and CSS code. The implementation emphasizes maintaining design fidelity while ensuring code quality, accessibility standards, and cross-browser compatibility.",
+    tech: ["HTML5", "CSS3"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/Reproduce-a-model-and-convert-it-into-a-web-page",
@@ -152,12 +213,23 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-10-20",
+    features: [
+      "Pixel-perfect implementation matching design specifications",
+      "Semantic HTML5 markup for better accessibility",
+      "Clean, maintainable CSS architecture",
+      "Responsive layout adaptable to different screen sizes",
+      "Cross-browser compatibility testing",
+      "Optimized for performance and fast loading"
+    ],
+    challenges: "Achieving pixel-perfect accuracy required meticulous attention to spacing, typography, and color values. Managing complex layouts without modern CSS Grid or advanced Flexbox knowledge at the time was challenging. Ensuring the implementation looked identical across different browsers demanded thorough testing and vendor prefix handling.",
+    learnings: "Developed strong fundamentals in HTML and CSS through precise implementation work. Learned the importance of attention to detail in frontend development. Gained experience in reading design specifications and translating visual designs into code. Improved understanding of CSS positioning, box model, and layout techniques."
   },
   {
     id: "solicode-clubs-form",
     title: "Solicode Clubs Registration Form",
     description: "Registration form for Solicode community clubs, featuring form validation and modern UI design.",
-    tech: ["HTML", "CSS", "JavaScript"],
+    longDescription: "An interactive registration form web application built for the SOLICODE community clubs program. This form allows students to register for various technical clubs by collecting user information with comprehensive validation. Features a modern, user-friendly interface with real-time validation feedback, ensuring data quality before submission. The project demonstrates proficiency in form handling, client-side validation, and creating accessible user input experiences.",
+    tech: ["JavaScript", "HTML5", "CSS3"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/Solicode-Clubs-Registration-Form",
@@ -165,12 +237,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-11-22",
+    features: [
+      "Multi-field registration form with various input types",
+      "Real-time client-side validation with error messages",
+      "Custom validation rules for email, phone, and required fields",
+      "Responsive design for mobile and desktop",
+      "User-friendly error handling and success feedback",
+      "Modern UI with focus states and accessibility features",
+      "Form data sanitization before submission"
+    ],
+    challenges: "Implementing comprehensive validation that covers all edge cases while providing clear, helpful error messages was complex. Creating validation logic that runs in real-time without frustrating users required careful UX consideration. Ensuring the form remained accessible with proper ARIA labels and keyboard navigation support was an important challenge.",
+    learnings: "Gained solid understanding of form handling in JavaScript including event listeners and DOM manipulation. Learned validation best practices and how to implement user-friendly error messaging. Developed skills in creating accessible forms with proper HTML semantics and ARIA attributes."
   },
   {
     id: "first-portfolio",
     title: "SOLICODE First Portfolio",
     description: "First portfolio project built during the SOLICODE training program, showcasing early web development skills.",
-    tech: ["HTML", "CSS"],
+    longDescription: "My first portfolio website created during the initial phase of the SOLICODE training program, marking the beginning of my web development journey. This foundational project demonstrates core HTML and CSS skills learned in the early stages of training. Built with semantic HTML and custom CSS styling, it showcases basic layout techniques, typography, and responsive design principles while presenting early projects and skills.",
+    tech: ["HTML5", "CSS3"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/SOLICODE-my-first-portfolio",
@@ -178,12 +262,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-10-17",
+    features: [
+      "Clean, simple layout with semantic HTML5",
+      "Custom CSS styling with modern design principles",
+      "About section showcasing skills and background",
+      "Projects showcase grid layout",
+      "Contact information section",
+      "Responsive design fundamentals",
+      "Cross-browser compatible styling"
+    ],
+    challenges: "As a first major project, understanding CSS layout and positioning was initially challenging. Creating a cohesive design without frameworks required learning design principles. Making the site responsive without knowledge of advanced techniques like CSS Grid demanded creative problem-solving with Flexbox and media queries.",
+    learnings: "Built strong foundational skills in HTML and CSS through hands-on practice. Learned the basics of responsive web design and mobile-first approach. Gained confidence in creating web pages from scratch and understanding how browsers render HTML and CSS. This project established fundamental knowledge that supports all subsequent development work."
   },
   {
     id: "json-display",
     title: "JSON File Content Display",
     description: "Create, query, and display the contents of a JSON file with interactive functionality.",
-    tech: ["JavaScript", "HTML"],
+    longDescription: "A JavaScript application that demonstrates working with JSON data structures through interactive creation, querying, and display functionality. This project showcases fundamental skills in handling JSON data, performing queries on data structures, and dynamically rendering content to the DOM. Users can interact with JSON data through an intuitive interface, making it an excellent learning tool for understanding data manipulation in JavaScript.",
+    tech: ["JavaScript", "HTML5", "CSS3", "JSON"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/Create-query-and-display-the-contents-of-a-JSON-file",
@@ -191,12 +287,23 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-12-29",
+    features: [
+      "Dynamic JSON data creation and manipulation",
+      "Query functionality to search through JSON structures",
+      "Real-time data display and formatting",
+      "Interactive interface for data exploration",
+      "JSON validation and error handling",
+      "Pretty-print formatting for readability"
+    ],
+    challenges: "Implementing flexible query functionality that works with varying JSON structures required careful handling of nested objects and arrays. Creating a user-friendly interface for viewing and navigating complex JSON data was challenging. Ensuring proper error handling for malformed JSON and edge cases demanded thorough testing.",
+    learnings: "Gained practical experience working with JSON data structures and parsing. Learned array and object manipulation methods in JavaScript. Developed understanding of data querying concepts and how to traverse complex nested structures programmatically."
   },
   {
     id: "article-management-classes",
     title: "Article Management using Classes",
     description: "Object-oriented JavaScript application for managing articles using ES6 classes and modern JavaScript patterns.",
-    tech: ["JavaScript", "OOP"],
+    longDescription: "An object-oriented JavaScript application demonstrating ES6 class-based architecture for managing article data. This project showcases modern JavaScript programming patterns including encapsulation, inheritance, and class methods to create a structured article management system. The application handles CRUD operations for articles while maintaining clean, organized code through OOP principles.",
+    tech: ["JavaScript ES6", "HTML5", "CSS3", "OOP"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/Article-Management-using-Classes",
@@ -204,12 +311,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-12-13",
+    features: [
+      "ES6 class-based architecture for code organization",
+      "Full CRUD operations for article management",
+      "Encapsulation with private methods and properties",
+      "Inheritance for extending article types",
+      "Interactive UI for article manipulation",
+      "Data persistence using LocalStorage",
+      "Input validation and error handling"
+    ],
+    challenges: "Designing a clean class hierarchy that avoids over-engineering while remaining extensible was challenging. Implementing proper encapsulation with JavaScript's class syntax and understanding the nuances of 'this' binding required careful attention. Bridging OOP concepts with DOM manipulation for the UI demanded thoughtful architecture decisions.",
+    learnings: "Mastered ES6 class syntax and object-oriented programming principles in JavaScript. Learned how to structure larger JavaScript applications using classes and modules. Gained understanding of encapsulation, inheritance, and polymorphism applied to real-world scenarios. Improved code organization and maintainability through OOP patterns."
   },
   {
     id: "cosmetic-store",
     title: "Cosmetic Products Store Management",
     description: "Article management system for a cosmetic products store, handling inventory and product information.",
-    tech: ["JavaScript", "HTML", "CSS"],
+    longDescription: "A comprehensive inventory management application designed specifically for a cosmetic products store. This system enables store administrators to manage product listings, track inventory levels, organize products by categories, and handle stock updates. Built with vanilla JavaScript, the application demonstrates practical e-commerce concepts including product categorization, search functionality, and inventory tracking in a user-friendly interface.",
+    tech: ["JavaScript", "HTML5", "CSS3", "LocalStorage API"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/Article-Management-in-a-Cosmetic-Products-Store",
@@ -217,12 +336,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2022-11-28",
+    features: [
+      "Product catalog management with detailed product information",
+      "Category-based product organization",
+      "Search and filter functionality for products",
+      "Inventory tracking and stock level monitoring",
+      "Add, edit, and delete product operations",
+      "Product image handling and display",
+      "LocalStorage for data persistence"
+    ],
+    challenges: "Managing relationships between products and categories while maintaining data consistency was complex. Implementing efficient search and filter functionality across multiple product attributes required optimization. Creating an intuitive interface for managing numerous product fields and inventory data demanded careful UX design.",
+    learnings: "Gained experience building inventory management systems and understanding e-commerce workflows. Learned data modeling techniques for products, categories, and relationships. Developed skills in implementing search and filter algorithms for improving data discoverability. Improved understanding of state management in JavaScript applications."
   },
   {
     id: "mealdb-api",
     title: "MealDB API",
     description: "Application integrating with MealDB API to fetch and display meal recipes and culinary information.",
-    tech: ["JavaScript", "API"],
+    longDescription: "A recipe discovery application that integrates with the MealDB public API to fetch and display meal recipes, ingredients, and cooking instructions. This project demonstrates asynchronous JavaScript, API integration, and dynamic content rendering. Users can search for recipes, browse by category, view detailed cooking instructions, and explore a vast collection of international cuisines through an engaging, responsive interface.",
+    tech: ["JavaScript", "HTML5", "CSS3", "REST API", "Fetch API"],
     category: "Frontend",
     demo: null,
     github: "https://github.com/Outhman790/MealDb-API-",
@@ -230,26 +361,48 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2023-01-15",
+    features: [
+      "Integration with MealDB public REST API",
+      "Recipe search by name, ingredient, or category",
+      "Detailed recipe view with ingredients and instructions",
+      "Category browsing and filtering",
+      "Responsive card-based layout for recipes",
+      "Loading states and error handling",
+      "Recipe image display with fallbacks"
+    ],
+    challenges: "Handling asynchronous API calls and managing loading states while providing good UX was challenging. Implementing error handling for network failures and empty results required thoughtful user feedback. Parsing and displaying complex recipe data with varying structures from the API demanded flexible data handling.",
+    learnings: "Mastered working with external APIs and handling asynchronous operations with Promises and async/await. Learned proper error handling for network requests and how to provide meaningful user feedback. Gained experience in consuming REST APIs and working with JSON responses. Improved skills in creating dynamic, data-driven interfaces."
   },
   {
-    id: "todo-app",
-    title: "Todo Application",
-    description: "Classic todo application for task management with add, edit, delete, and mark complete functionality.",
-    tech: ["JavaScript", "HTML", "CSS"],
+    id: "budget-monitoring",
+    title: "Budget Monitoring",
+    description: "An earlier version of budget tracking application exploring different approaches to personal finance management.",
+    longDescription: "An earlier iteration of budget tracking software that explores different architectural approaches to personal finance management. This project served as a learning foundation for building financial applications, experimenting with various state management patterns, data persistence strategies, and UI/UX designs for expense tracking. The insights gained from this version informed the development of the more refined Budget Tracker application.",
+    tech: ["React", "JavaScript", "CSS3"],
     category: "Frontend",
     demo: null,
-    github: "https://github.com/Outhman790/todo",
-    image: null,
+    github: "https://github.com/Outhman790/budget-monitoring",
+    image: "/Budget Monitoring thumbnail.png",
     stars: 0,
     featured: false,
-    date: "2024-12-28",
+    date: "2023-05-15",
+    features: [
+      "Basic expense and income tracking",
+      "Simple categorization system",
+      "Data persistence with LocalStorage",
+      "Responsive layout for mobile devices",
+      "Transaction history view",
+      "Basic budget calculations"
+    ],
+    challenges: "Experimenting with different state management approaches to find the most efficient pattern for financial data. Balancing feature complexity with code maintainability as a learning project. Iterating on UI/UX designs to discover the most intuitive ways to display financial information.",
+    learnings: "Learned the importance of planning application architecture before implementation. Gained experience in iterative development and refactoring. Understood the value of user feedback in shaping financial application design. This project laid the groundwork for building more sophisticated financial tracking tools."
   },
-
   // Backend Projects
   {
     id: "library-management",
     title: "Library Management System",
     description: "Object-oriented PHP application for managing library resources and operations. Features include book management, member tracking, and borrowing system.",
+    longDescription: "A comprehensive library management system built using object-oriented PHP principles to handle the complete lifecycle of library operations. This application provides a robust solution for managing books, tracking library members, handling borrowing and return transactions, and monitoring overdue items. Designed with OOP best practices, the system implements classes for Books, Members, Transactions, and Admin operations with proper encapsulation, inheritance, and polymorphism. The intuitive interface allows librarians to efficiently manage inventory, process book checkouts and returns, maintain member records, and generate reports on library activity.",
     tech: ["PHP", "OOP", "JavaScript"],
     category: "Backend",
     demo: null,
@@ -258,12 +411,24 @@ export const projects = [
     stars: 0,
     featured: true,
     date: "2023-03-20",
+    features: [
+      "Complete book inventory management with add, update, delete, and search functionality",
+      "Member registration and profile management system",
+      "Book borrowing and return transaction processing",
+      "Automated tracking of due dates and overdue notifications",
+      "Search and filter capabilities for books by title, author, ISBN, or category",
+      "Object-oriented architecture with reusable and maintainable code structure",
+      "Admin dashboard for monitoring library statistics and activity"
+    ],
+    challenges: "Implementing a robust object-oriented architecture required careful planning of class hierarchies and relationships. Managing the borrowing transaction logic with proper state management and date calculations for due dates and overdue tracking was complex. Ensuring data integrity when multiple operations occur simultaneously (e.g., checking book availability before allowing borrowing) required implementing proper validation and error handling.",
+    learnings: "Mastered object-oriented programming principles in PHP including classes, inheritance, encapsulation, and polymorphism. Learned how to design and implement a domain-driven application with clear separation of concerns. Developed skills in managing complex business logic for transaction processing and state management. Improved understanding of how to structure larger PHP applications with maintainable and scalable code architecture."
   },
   {
     id: "world-cup-simulator",
     title: "World Cup Simulator",
     description: "PHP-based web application that simulates World Cup group stage matches with real-time leaderboard generation and advanced tie-breaking rules following FIFA standards.",
-    tech: ["PHP", "Bootstrap", "JavaScript"],
+    longDescription: "An engaging PHP web application that simulates World Cup group stage tournaments with realistic match outcomes and authentic FIFA ranking calculations. The simulator generates random match results, applies official FIFA tie-breaking rules, and dynamically updates group standings in real-time. Built with server-side PHP logic and enhanced with Bootstrap for responsive UI, this project demonstrates understanding of complex algorithms, sports statistics calculations, and creating interactive web applications.",
+    tech: ["PHP", "Bootstrap", "JavaScript", "HTML5", "CSS3"],
     category: "Backend",
     demo: null,
     github: "https://github.com/Outhman790/World-Cup-Simulator",
@@ -271,12 +436,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2023-01-31",
+    features: [
+      "Realistic match simulation with random but weighted outcomes",
+      "Dynamic group stage leaderboard with real-time updates",
+      "FIFA-compliant tie-breaking rules implementation",
+      "Multiple groups simulation capability",
+      "Match history tracking and statistics",
+      "Responsive design with Bootstrap framework",
+      "Interactive controls for running simulations"
+    ],
+    challenges: "Implementing the complex FIFA tie-breaking rules accurately required careful study of official regulations and extensive testing. Creating a fair random match outcome generator that produces realistic results while avoiding predictability was challenging. Managing state across multiple simulations and ensuring data consistency demanded thoughtful architecture.",
+    learnings: "Developed strong PHP programming skills for complex business logic implementation. Learned algorithms for ranking systems and tie-breaking rules. Gained experience in creating data-driven applications with dynamic UI updates. Improved understanding of sports statistics and tournament management systems."
   },
   {
     id: "real-estate-ads",
     title: "Real Estate Ads Management",
     description: "Management system for real estate agency advertisements, handling property listings and client interactions.",
-    tech: ["PHP", "MySQL"],
+    longDescription: "A comprehensive real estate advertisement management system built for property agencies to streamline their listing operations. This PHP and MySQL application enables agents to create, manage, and publish property listings with detailed information, images, and pricing. The system includes search and filter capabilities for potential buyers, contact management for inquiries, and an admin dashboard for overseeing all property advertisements and client interactions.",
+    tech: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3"],
     category: "Backend",
     demo: null,
     github: "https://github.com/Outhman790/Gestion-des-annonces-d-une-agence-immobili-re",
@@ -284,12 +461,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2023-02-08",
+    features: [
+      "Complete property listing management with CRUD operations",
+      "Multi-image upload and gallery for properties",
+      "Advanced search and filter by price, location, type, and features",
+      "Client inquiry system with contact forms",
+      "Admin dashboard for managing listings and inquiries",
+      "Property categorization by type (apartment, house, commercial)",
+      "MySQL database with optimized queries for search performance"
+    ],
+    challenges: "Designing a database schema that efficiently handles property data with multiple images and search criteria was complex. Implementing multi-image upload with validation and storage management required careful file handling. Creating performant search queries that filter across multiple criteria while maintaining speed demanded query optimization.",
+    learnings: "Gained experience building CMS-style applications for content management. Learned file upload handling, validation, and storage best practices in PHP. Developed skills in database design for content-heavy applications and optimizing MySQL queries for search functionality. Improved understanding of real estate domain requirements and user workflows."
   },
   {
     id: "contact-form-plugin",
     title: "WordPress Contact Form Plugin",
     description: "Custom WordPress plugin for creating and managing contact forms with customizable fields and email notifications.",
-    tech: ["PHP", "WordPress"],
+    longDescription: "A custom WordPress plugin that extends site functionality by providing flexible contact form creation and management capabilities. This plugin allows site administrators to create customizable contact forms with various field types, implement form validation, and configure email notifications for form submissions. Built following WordPress plugin development standards, it integrates seamlessly with the WordPress admin interface and includes shortcode support for easy form embedding.",
+    tech: ["PHP", "WordPress API", "JavaScript", "MySQL"],
     category: "Backend",
     demo: null,
     github: "https://github.com/Outhman790/Contact-form-wordpress-plugin",
@@ -297,12 +486,25 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2023-04-14",
+    features: [
+      "Custom form builder with drag-and-drop interface",
+      "Multiple field types (text, email, textarea, select, checkbox)",
+      "Server-side and client-side form validation",
+      "Email notification system for form submissions",
+      "Spam protection with honeypot and CAPTCHA integration",
+      "Form submission storage in WordPress database",
+      "Shortcode support for easy form embedding",
+      "Admin dashboard for managing form entries"
+    ],
+    challenges: "Understanding WordPress plugin architecture and following WordPress coding standards required learning the framework's conventions. Implementing secure form handling with proper sanitization and validation to prevent XSS and SQL injection was critical. Creating a flexible form builder that works across different themes demanded careful CSS scoping and compatibility testing.",
+    learnings: "Mastered WordPress plugin development including hooks, filters, and the WordPress API. Learned WordPress database operations with wpdb and custom table creation. Developed understanding of WordPress security best practices including nonce verification and data sanitization. Gained experience in creating admin interfaces within the WordPress dashboard."
   },
   {
     id: "showcase-wordpress",
     title: "Showcase Website on WordPress",
     description: "Professional showcase website built using WordPress, demonstrating custom theme development and CMS capabilities.",
-    tech: ["PHP", "WordPress", "CSS"],
+    longDescription: "A professional showcase website built entirely on WordPress, demonstrating custom theme development and content management capabilities. This project involved creating a custom WordPress theme from scratch, implementing the WordPress template hierarchy, and integrating custom post types and taxonomies. The site showcases portfolio items, services, and company information through a polished, professional design that leverages WordPress's powerful CMS features.",
+    tech: ["PHP", "WordPress", "CSS3", "JavaScript", "MySQL"],
     category: "Backend",
     demo: null,
     github: "https://github.com/Outhman790/showcase-website-on-wordpress",
@@ -310,12 +512,25 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2023-03-28",
+    features: [
+      "Custom WordPress theme development from scratch",
+      "Custom post types for portfolio and services",
+      "Custom taxonomies for content organization",
+      "Responsive design with mobile-first approach",
+      "Widget areas and customizer integration",
+      "SEO-optimized structure with proper heading hierarchy",
+      "Contact page with form integration",
+      "Gallery functionality for showcasing work"
+    ],
+    challenges: "Learning WordPress template hierarchy and theme development standards required understanding WordPress's structure deeply. Creating a flexible theme that works with WordPress's content editor while maintaining design consistency was challenging. Ensuring theme compatibility with popular plugins and adhering to WordPress theme review guidelines demanded thorough testing.",
+    learnings: "Mastered WordPress theme development including template hierarchy, custom post types, and taxonomies. Learned WordPress template tags and the Loop for content display. Developed skills in integrating WordPress Customizer for theme options. Gained understanding of WordPress best practices for security, performance, and accessibility in theme development."
   },
   {
     id: "ecommerce-wordpress",
     title: "E-commerce Site with WooCommerce",
     description: "Full-featured e-commerce website built using WordPress and WooCommerce, with product management, cart, and checkout functionality.",
-    tech: ["WordPress", "WooCommerce", "PHP"],
+    longDescription: "A fully functional e-commerce website built on WordPress using the WooCommerce plugin, demonstrating end-to-end online store implementation. This project includes complete product catalog management, shopping cart functionality, secure checkout process, and order management system. The site integrates payment gateways, implements shipping calculations, and provides customers with a seamless shopping experience while giving administrators powerful tools for managing their online store.",
+    tech: ["WordPress", "WooCommerce", "PHP", "JavaScript", "MySQL"],
     category: "Backend",
     demo: null,
     github: "https://github.com/Outhman790/Site-web-e-commerce-en-utilisant-WordPress-et-WooCommerce",
@@ -323,6 +538,19 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2023-04-05",
+    features: [
+      "Complete product catalog with variations and attributes",
+      "Shopping cart and wishlist functionality",
+      "Secure checkout process with multiple payment gateways",
+      "Inventory management and stock tracking",
+      "Order management system with status updates",
+      "Customer account system with order history",
+      "Shipping zone configuration and calculation",
+      "Coupon and discount code system",
+      "Product reviews and ratings"
+    ],
+    challenges: "Configuring WooCommerce for optimal performance while maintaining rich features required careful plugin selection and optimization. Integrating payment gateways securely and handling checkout edge cases demanded thorough testing. Customizing WooCommerce templates to match brand design while maintaining update compatibility was challenging.",
+    learnings: "Gained comprehensive understanding of e-commerce workflows and online store management. Learned WooCommerce architecture, hooks, and filters for customization. Developed skills in payment gateway integration and understanding PCI compliance basics. Improved knowledge of inventory management, shipping calculations, and tax handling in e-commerce systems."
   },
 
   // Algorithms & Games
@@ -330,7 +558,8 @@ export const projects = [
     id: "dsa",
     title: "DSA",
     description: "Data Structures and Algorithms implementations and practice problems. Includes solutions to common coding challenges and algorithm optimizations.",
-    tech: ["JavaScript", "Algorithms"],
+    longDescription: "A comprehensive collection of Data Structures and Algorithms implementations and solutions to coding challenges. This repository serves as a learning resource and practice ground for fundamental computer science concepts, covering essential data structures like arrays, linked lists, trees, graphs, and hash tables, along with classic algorithms for sorting, searching, dynamic programming, and graph traversal. Each implementation includes detailed comments explaining time and space complexity.",
+    tech: ["JavaScript", "Algorithms", "Data Structures"],
     category: "Algorithms",
     demo: null,
     github: "https://github.com/Outhman790/DSA",
@@ -338,11 +567,23 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2025-01-02",
+    features: [
+      "Implementations of fundamental data structures (arrays, linked lists, stacks, queues, trees, graphs)",
+      "Classic sorting algorithms (bubble sort, merge sort, quick sort, heap sort)",
+      "Search algorithms (binary search, depth-first search, breadth-first search)",
+      "Dynamic programming solutions for optimization problems",
+      "Graph algorithms (Dijkstra's, Bellman-Ford, topological sort)",
+      "Time and space complexity analysis for each solution",
+      "Comprehensive test cases and examples"
+    ],
+    challenges: "Understanding the theoretical concepts behind algorithms and translating them into working code required deep study. Optimizing solutions to achieve better time and space complexity demanded analytical thinking and multiple iterations. Debugging complex recursive algorithms and understanding edge cases was particularly challenging.",
+    learnings: "Gained solid foundation in data structures and algorithms essential for technical interviews and problem-solving. Learned to analyze algorithm complexity using Big O notation. Developed systematic problem-solving approaches including identifying patterns, breaking down problems, and optimizing solutions. Improved understanding of when to use specific data structures for different scenarios."
   },
   {
     id: "caesar-cipher",
     title: "Caesar Cipher Game",
     description: "Interactive educational game implementing the classic Caesar cipher substitution technique. Enables users to encrypt or decrypt messages, providing an interactive way to learn about ancient encryption methods.",
+    longDescription: "An interactive educational game that brings the ancient Caesar cipher encryption technique to life through hands-on learning. This Python application allows users to encrypt messages using customizable shift values and decrypt secret messages, teaching fundamental cryptography concepts in an engaging way. The game demonstrates how substitution ciphers work while providing insight into the historical significance of encryption methods used by Julius Caesar.",
     tech: ["Python"],
     category: "Algorithms",
     demo: null,
@@ -351,11 +592,23 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2024-04-08",
+    features: [
+      "Encrypt text using Caesar cipher with custom shift values",
+      "Decrypt encoded messages with known or unknown shifts",
+      "Brute force decryption to crack messages without shift key",
+      "Support for uppercase and lowercase letters",
+      "Preserves spaces and punctuation in messages",
+      "Interactive command-line interface",
+      "Educational mode explaining how the cipher works"
+    ],
+    challenges: "Implementing the shift algorithm while properly handling edge cases like wrapping around the alphabet required careful logic. Handling both uppercase and lowercase letters while preserving other characters demanded character encoding knowledge. Creating an intuitive user experience for a command-line application was an interesting design challenge.",
+    learnings: "Gained understanding of basic cryptography concepts and substitution ciphers. Learned string manipulation techniques in Python including character encoding and ASCII values. Developed skills in creating interactive command-line applications with clear user prompts and input validation. Improved problem-solving abilities through implementing mathematical algorithms."
   },
   {
     id: "hangman",
     title: "Hangman Game",
     description: "Classic word guessing game implemented in Python with modular design. The game challenges players to guess a secret word by suggesting letters within a limited number of attempts.",
+    longDescription: "A Python implementation of the classic Hangman word guessing game featuring clean, modular code architecture. Players attempt to guess a randomly selected word letter by letter, with limited incorrect guesses allowed before losing. The game includes visual feedback through ASCII art hangman drawings, tracks guessed letters, reveals correct letters in their positions, and provides an engaging command-line gaming experience with replay functionality.",
     tech: ["Python"],
     category: "Algorithms",
     demo: null,
@@ -364,11 +617,24 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2024-04-06",
+    features: [
+      "Random word selection from curated word list",
+      "ASCII art hangman visualization showing remaining attempts",
+      "Letter tracking to prevent duplicate guesses",
+      "Progressive word reveal as correct letters are guessed",
+      "Win/loss detection with appropriate feedback",
+      "Replay functionality for continuous play",
+      "Modular code structure for easy maintenance",
+      "Input validation for user guesses"
+    ],
+    challenges: "Managing game state across multiple rounds while tracking guessed letters, remaining attempts, and word progress required careful state management. Creating meaningful ASCII art for the hangman visualization that updates dynamically was fun but challenging. Implementing input validation to handle edge cases like invalid characters or repeat guesses demanded robust error handling.",
+    learnings: "Developed stronger Python programming fundamentals including functions, loops, and conditionals. Learned state management concepts for game development. Gained experience in creating interactive command-line applications with user input handling. Improved code organization skills through modular design patterns and function decomposition."
   },
   {
     id: "password-generator",
     title: "Python Password Generator",
     description: "A secure password generator utility built with Python, creating strong randomized passwords with customizable length and character options.",
+    longDescription: "A secure password generation utility built with Python that creates strong, cryptographically random passwords tailored to user specifications. This tool helps users create secure passwords by combining uppercase and lowercase letters, numbers, and special characters in a randomized pattern. The generator supports customizable password length and character type selection, ensuring generated passwords meet various security requirements for different online services.",
     tech: ["Python"],
     category: "Algorithms",
     demo: null,
@@ -377,6 +643,17 @@ export const projects = [
     stars: 0,
     featured: false,
     date: "2023-10-15",
+    features: [
+      "Customizable password length for different security needs",
+      "Character type selection (uppercase, lowercase, numbers, symbols)",
+      "Cryptographically secure random generation",
+      "Multiple password generation in one session",
+      "Password strength indicator",
+      "Command-line interface for quick password creation",
+      "Ensures inclusion of selected character types in output"
+    ],
+    challenges: "Implementing true randomization using cryptographically secure methods rather than predictable pseudo-random functions required understanding Python's random module. Ensuring the generated password always includes at least one character from each selected type while maintaining randomness was algorithmically interesting. Creating a balance between password complexity and user customization options demanded thoughtful design.",
+    learnings: "Gained understanding of password security principles and what makes strong passwords. Learned about Python's random module and the difference between random and secrets modules for security purposes. Developed skills in creating practical command-line utilities. Improved understanding of string manipulation and character set handling in Python."
   },
 ];
 
