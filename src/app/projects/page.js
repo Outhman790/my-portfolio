@@ -9,7 +9,7 @@ import ProjectDetailsModal from "@/components/projects/ProjectDetailsModal";
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [sortBy, setSortBy] = useState("date");
+  const [sortBy, setSortBy] = useState("stars");
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
