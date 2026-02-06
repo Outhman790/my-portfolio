@@ -45,16 +45,13 @@ export default function ProjectDetailsModal({ isOpen, onClose, project }) {
   };
 
   return (
-    <div
-      className="fixed inset-0 z-60 flex items-center justify-center p-4 animate-[fadeIn_0.2s_ease-out]"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) {
-          onClose();
-        }
-      }}
-    >
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 animate-[fadeIn_0.2s_ease-out]">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onClick={onClose}
+        aria-label="Close modal"
+      />
 
       {/* Modal Content */}
       <div
@@ -64,12 +61,12 @@ export default function ProjectDetailsModal({ isOpen, onClose, project }) {
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         tabIndex={-1}
-        className="relative bg-background/95 backdrop-blur-md border border-primary/20 rounded-2xl shadow-2xl shadow-primary/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto animate-[scaleIn_0.3s_ease-out]"
+        className="relative bg-background/95 backdrop-blur-md border border-primary/20 rounded-2xl shadow-2xl shadow-primary/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto animate-[scaleIn_0.3s_ease-out] z-10 custom-scrollbar"
       >
-        {/* Close Button */}
+        {/* Close Button - Fixed Position */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 transition-colors"
+          className="fixed top-6 right-6 z-[70] p-2.5 rounded-full bg-gradient-to-br from-secondary/20 to-primary/20 backdrop-blur-md border border-white/20 text-foreground hover:from-secondary/30 hover:to-primary/30 hover:border-white/40 shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:scale-110 active:scale-95 transition-all duration-300 group"
           aria-label="Close modal"
         >
           <svg
@@ -78,7 +75,7 @@ export default function ProjectDetailsModal({ isOpen, onClose, project }) {
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300"
           >
             <path
               strokeLinecap="round"
@@ -316,7 +313,7 @@ export default function ProjectDetailsModal({ isOpen, onClose, project }) {
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-base font-medium rounded-lg hover:bg-primary/30 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-200"
               >
-                <span>View Live Demo</span>
+                <span>{project.demoLabel || "View Live Demo"}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -372,7 +369,7 @@ export default function ProjectDetailsModal({ isOpen, onClose, project }) {
         </div>
       </div>
 
-      {/* Animations */}
+      {/* Animations & Custom Scrollbar */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -392,6 +389,34 @@ export default function ProjectDetailsModal({ isOpen, onClose, project }) {
             opacity: 1;
             transform: scale(1);
           }
+        }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 10px;
+          margin: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: linear-gradient(180deg, rgba(139, 92, 246, 0.6) 0%, rgba(59, 130, 246, 0.8) 100%);
+          border-radius: 10px;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(180deg, rgba(139, 92, 246, 0.9) 0%, rgba(59, 130, 246, 1) 100%);
+          box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Firefox */
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(139, 92, 246, 0.7) rgba(255, 255, 255, 0.05);
         }
       `}</style>
     </div>
